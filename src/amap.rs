@@ -1,9 +1,10 @@
 /**
  * 通过高德地图获取最新的行政区划数据
  */
-
+use serde_derive::Deserialize;
 
 /// 高德地图返回接口数据类型定义
+#[derive(Debug, Clone, Deserialize)]
 struct Amap{
     status: String,
     info: String,
@@ -14,12 +15,14 @@ struct Amap{
 }
 
 /// 搜索元素类型定义
+#[derive(Debug, Clone, Deserialize)]
 struct Suggestion {
     keywords: Vec<String>,
     cities: Vec<String>
 }
 
 /// 区域类型定义
+#[derive(Debug, Clone, Deserialize)]
 struct District {
     citycode: Option<String>,
     adcode: String,
