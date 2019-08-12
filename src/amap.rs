@@ -1,5 +1,6 @@
 /**
  * 通过高德地图获取最新的行政区划数据
+ * http://lbs.amap.com/api/webservice/guide/api/district
  */
 use serde_derive::{Deserialize, Serialize};
 use lane_net::get_str;

@@ -2,8 +2,10 @@
  * 京东的地址数据库
  * https://d.jd.com/area/get?fid=0
  */
+
 use serde::Deserialize;
 use lane_net::get_str;
+use crate::FileFormat;
 
 const URL: &str = "https://d.jd.com/area/get?fid=";
 
@@ -14,7 +16,8 @@ struct District {
     name: String,
 }
 
-pub fn start(){
+
+pub fn start(f: FileFormat, sub_level: i32){
     get_province();
     // println!("{}", format!("{}{}", URL, "0"));
     // let url = format!("{}{}", URL, "0");

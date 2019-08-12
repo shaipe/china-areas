@@ -1,7 +1,7 @@
 中华人民共和国行政区划数据库
 ===
 
-[![](https://img.shields.io/github/issues/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/issues) [![](https://img.shields.io/github/forks/shaipe/areas.svg)](https://github.com/shaipe/china-areas/network) [![](https://img.shields.io/github/stars/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/stargazers) [![](https://img.shields.io/github/release/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/releases)
+[![](https://img.shields.io/github/issues/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/issues) [![](https://img.shields.io/github/forks/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/network) [![](https://img.shields.io/github/stars/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/stargazers) [![](https://img.shields.io/github/release/shaipe/china-areas.svg)](https://github.com/shaipe/china-areas/releases)
 
 中国行政区划代码，包括五级行政区划详细代码，县级以上区划地理围栏。
 
