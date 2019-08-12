@@ -8,7 +8,11 @@ edition = "2018"
 
 [dependencies]
 reqwest="*"
-
+regex="*"
 serde="*"
 serde_json="*"
 serde_derive="*"
+
+[dependencies.lane_net]
+path="../lane/net"
+version="0.1.0"
