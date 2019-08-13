@@ -18,6 +18,7 @@ struct District {
 
 
 pub fn start(f: FileFormat, sub_level: i32){
+    println!("{:?} {}, 正在抓紧开发中...", f, sub_level);
     get_province();
     // println!("{}", format!("{}{}", URL, "0"));
     // let url = format!("{}{}", URL, "0");

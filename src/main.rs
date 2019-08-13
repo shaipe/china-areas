@@ -4,7 +4,7 @@
  * authors:// shaipe
  */
 
-extern crate reqwest;
+// extern crate reqwest;
 extern crate lane_net;
 
 /// 项目内部模块引入
@@ -17,11 +17,44 @@ mod stats;
 use std::env;
 
 /// 支持的格式
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub enum FileFormat {
     Json,
     Csv,
     Sql
+}
+
+impl FileFormat {
+
+    // 枚举转换为字符
+    pub fn as_str(&self) -> &'static str {
+
+        match *self {
+            FileFormat::Sql => "sql",
+            FileFormat::Csv => "csv",
+            FileFormat::Json => "json",
+        }
+    }
+}
+
+/// 接口数据源
+pub enum ApiSource {
+    Amap,
+    Jd,
+    Mca,
+    Stats
+}
+
+impl ApiSource {
+
+    pub fn as_str(&self) -> &'static str {
+        match *self {
+            ApiSource::Amap => "amap",
+            ApiSource::Jd => "jd",
+            ApiSource::Mca => "mca",
+            ApiSource::Stats => "stats",
+        }
+    }
 }
 
 fn main() {

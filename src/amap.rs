@@ -81,10 +81,14 @@ pub fn start(f: FileFormat, sub_level: i32){
     let file_name = format!("./data/areas.{}", ext);
     // println!("{}", file_name);
     // return;
-    let mut res = analyze_districts(a.districts, "-1", &f.clone());
+
+    let mut res = Analyze::new().analyze_districts(a.districts, "-1", &f.clone());
 
     // 给定表结构
-    res.insert(0, "replace into cor_Region (CodeId, ParentId, Name) VALUES ".to_owned());
+    match f {
+        FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, ParentId, Name) VALUES ".to_owned()),
+        _ => {}
+    };
     
     let mut file = match File::create(file_name.clone()) {
         Err(why) => panic!("couldn't create {}", why),
@@ -102,34 +106,61 @@ pub fn start(f: FileFormat, sub_level: i32){
     println!("高德地图行政区划接口分析结束");
 }
 
-/// 分析区域组合
-fn analyze_districts(districts: Vec<District>, parent_code: &str, fmat: &FileFormat) -> Vec<String> {
-    let mut res: Vec<String> = vec![];
-    for district in districts {
-        let dis = district.clone();
-        let code = district.adcode;
-        let dis_res = analyze_district(dis, fmat.clone(), parent_code);
-        res.push(dis_res);
-        if district.districts.len() > 0 {
-            let mut diss_res = analyze_districts(district.districts, &code, fmat);
-            res.append(&mut diss_res);
-        }
-    }
-    res
+struct Analyze {
+    district_count: i32
 }
 
-/// 单个区域数据分析
-fn analyze_district(district: District, format: FileFormat, parent_code: &str) -> String {
-    let re_zero = Regex::new("(0+)$").unwrap();
-    let p = re_zero.replace(parent_code, "");
-    let code = re_zero.replace(&district.adcode, "");
-    match format {
-        FileFormat::Sql => format!("({},{},{}),", code, p, district.name),
-        FileFormat::Csv => format!("{},{},{},", code, p, district.name),
-        FileFormat::Json => serde_json::to_string_pretty(&district).unwrap(),
-        _ => String::new()
+impl Analyze {
+
+    fn new() -> Self {
+        Analyze{
+            district_count: 0
+        }
+    }
+
+    /// 分析区域组合
+    fn analyze_districts(&mut self, districts: Vec<District>, parent_code: &str, fmat: &FileFormat) -> Vec<String> {
+        let mut res: Vec<String> = vec![];
+        for district in districts {
+            let dis = district.clone();
+            let code = district.adcode;
+            let dis_res = self.analyze_district(dis, fmat.clone(), parent_code);
+            res.push(dis_res);
+            if district.districts.len() > 0 {
+                self.district_count = 0;
+                let mut diss_res = self.analyze_districts(district.districts, &code, fmat);
+                res.append(&mut diss_res);
+            }
+        }
+        res
+    }
+
+    /// 单个区域数据分析
+    fn analyze_district(&mut self, district: District, format: FileFormat, parent_code: &str) -> String {
+        let re_zero = Regex::new("(0+)$").unwrap();
+        let p = re_zero.replace(parent_code, "");
+        let code = re_zero.replace(&district.adcode, "");
+        let mut codex = format!("{}", code);
+        if code == p {
+            self.district_count +=1;
+            // 不足两位用0在前面补齐
+            let c = if self.district_count < 10 {
+                format!("0{}", self.district_count)
+            }
+            else{
+                self.district_count.to_string()
+            };
+
+            codex = format!("{}{}", code, c);
+        }
+        match format {
+            FileFormat::Sql => format!("({},{},'{}'),", codex, p, district.name),
+            FileFormat::Csv => format!("{},{},{},", codex, p, district.name),
+            FileFormat::Json => serde_json::to_string_pretty(&district).unwrap()
+        }
     }
 }
+
 
 
 /// 接口url地址
@@ -147,10 +178,10 @@ fn fetch_province(sub_level: i32) -> String {
     html
 }
 
-/// 获取高德地图的数据
-fn fetch_amap(keywords: &str, sub: i32) {
-    //https://restapi.amap.com/v3/config/district?keywords=武侯区&subdistrict=3&key=a59e1b26770fe9cdda279d8726e97a08
-    let url = format!("{}keywords={}&subdistrict={}&key={}", URL, keywords, sub, KEY);
-    let html = get_str(&url);
-    println!("{:?}", html);
-}
+// /// 获取高德地图的数据
+// fn fetch_amap(keywords: &str, sub: i32) {
+//     //https://restapi.amap.com/v3/config/district?keywords=武侯区&subdistrict=3&key=a59e1b26770fe9cdda279d8726e97a08
+//     let url = format!("{}keywords={}&subdistrict={}&key={}", URL, keywords, sub, KEY);
+//     let html = get_str(&url);
+//     println!("{:?}", html);
+// }
