@@ -1,0 +1,264 @@
+[{
+  "id": 1,
+  "name": "北京",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 1,
+  "districts": null
+},
+{
+  "id": 2,
+  "name": "上海",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 2,
+  "districts": null
+},
+{
+  "id": 3,
+  "name": "天津",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 3,
+  "districts": null
+},
+{
+  "id": 4,
+  "name": "重庆",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 4,
+  "districts": null
+},
+{
+  "id": 5,
+  "name": "河北",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 5,
+  "districts": null
+},
+{
+  "id": 6,
+  "name": "山西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 6,
+  "districts": null
+},
+{
+  "id": 7,
+  "name": "河南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 7,
+  "districts": null
+},
+{
+  "id": 8,
+  "name": "辽宁",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 8,
+  "districts": null
+},
+{
+  "id": 9,
+  "name": "吉林",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 9,
+  "districts": null
+},
+{
+  "id": 10,
+  "name": "黑龙江",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 10,
+  "districts": null
+},
+{
+  "id": 11,
+  "name": "内蒙古",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 11,
+  "districts": null
+},
+{
+  "id": 12,
+  "name": "江苏",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 12,
+  "districts": null
+},
+{
+  "id": 13,
+  "name": "山东",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 13,
+  "districts": null
+},
+{
+  "id": 14,
+  "name": "安徽",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 14,
+  "districts": null
+},
+{
+  "id": 15,
+  "name": "浙江",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 15,
+  "districts": null
+},
+{
+  "id": 16,
+  "name": "福建",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 16,
+  "districts": null
+},
+{
+  "id": 17,
+  "name": "湖北",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 17,
+  "districts": null
+},
+{
+  "id": 18,
+  "name": "湖南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 18,
+  "districts": null
+},
+{
+  "id": 19,
+  "name": "广东",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 19,
+  "districts": null
+},
+{
+  "id": 20,
+  "name": "广西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 20,
+  "districts": null
+},
+{
+  "id": 21,
+  "name": "江西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 21,
+  "districts": null
+},
+{
+  "id": 22,
+  "name": "四川",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 22,
+  "districts": null
+},
+{
+  "id": 23,
+  "name": "海南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 23,
+  "districts": null
+},
+{
+  "id": 24,
+  "name": "贵州",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 24,
+  "districts": null
+},
+{
+  "id": 25,
+  "name": "云南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 25,
+  "districts": null
+},
+{
+  "id": 26,
+  "name": "西藏",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 26,
+  "districts": null
+},
+{
+  "id": 27,
+  "name": "陕西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 27,
+  "districts": null
+},
+{
+  "id": 28,
+  "name": "甘肃",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 28,
+  "districts": null
+},
+{
+  "id": 29,
+  "name": "青海",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 29,
+  "districts": null
+},
+{
+  "id": 30,
+  "name": "宁夏",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 30,
+  "districts": null
+},
+{
+  "id": 31,
+  "name": "新疆",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 31,
+  "districts": null
+},
+{
+  "id": 32,
+  "name": "台湾",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 32,
+  "districts": null
+},
+{
+  "id": 84,
+  "name": "钓鱼岛",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 33,
+  "districts": null
+}]

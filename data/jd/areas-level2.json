@@ -1,0 +1,3937 @@
+[{
+  "id": 1,
+  "name": "北京",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 1,
+  "districts": [
+    {
+      "id": 72,
+      "name": "朝阳区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2800,
+      "name": "海淀区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2801,
+      "name": "西城区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2802,
+      "name": "东城区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2803,
+      "name": "崇文区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2804,
+      "name": "宣武区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2805,
+      "name": "丰台区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2806,
+      "name": "石景山区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2807,
+      "name": "门头沟",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 2808,
+      "name": "房山区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 2809,
+      "name": "通州区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 2810,
+      "name": "大兴区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 2812,
+      "name": "顺义区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 2814,
+      "name": "怀柔区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 2816,
+      "name": "密云区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 2901,
+      "name": "昌平区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 2953,
+      "name": "平谷区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 3065,
+      "name": "延庆区",
+      "parent_id": 1,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 2,
+  "name": "上海",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 2,
+  "districts": [
+    {
+      "id": 78,
+      "name": "黄浦区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2813,
+      "name": "徐汇区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2815,
+      "name": "长宁区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2817,
+      "name": "静安区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2820,
+      "name": "闸北区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2822,
+      "name": "虹口区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2823,
+      "name": "杨浦区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2824,
+      "name": "宝山区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2825,
+      "name": "闵行区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 2826,
+      "name": "嘉定区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 2830,
+      "name": "浦东新区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 2833,
+      "name": "青浦区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 2834,
+      "name": "松江区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 2835,
+      "name": "金山区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 2837,
+      "name": "奉贤区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 2841,
+      "name": "普陀区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 2919,
+      "name": "崇明区",
+      "parent_id": 2,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 3,
+  "name": "天津",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 3,
+  "districts": [
+    {
+      "id": 51035,
+      "name": "东丽区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 51036,
+      "name": "和平区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 51037,
+      "name": "河北区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 51038,
+      "name": "河东区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 51039,
+      "name": "河西区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 51040,
+      "name": "红桥区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 51041,
+      "name": "蓟州区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 51042,
+      "name": "静海区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 51043,
+      "name": "南开区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 51044,
+      "name": "滨海新区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 51045,
+      "name": "西青区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 51046,
+      "name": "武清区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 51047,
+      "name": "津南区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 51048,
+      "name": "汉沽区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 51049,
+      "name": "大港区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 51050,
+      "name": "北辰区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 51051,
+      "name": "宝坻区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 51052,
+      "name": "宁河区",
+      "parent_id": 3,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 4,
+  "name": "重庆",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 4,
+  "districts": [
+    {
+      "id": 113,
+      "name": "万州区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 114,
+      "name": "涪陵区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 115,
+      "name": "梁平区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 119,
+      "name": "南川区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 123,
+      "name": "潼南区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 126,
+      "name": "大足区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 128,
+      "name": "黔江区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 129,
+      "name": "武隆区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 130,
+      "name": "丰都县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 131,
+      "name": "奉节县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 132,
+      "name": "开州区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 133,
+      "name": "云阳县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 134,
+      "name": "忠县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 135,
+      "name": "巫溪县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 136,
+      "name": "巫山县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 137,
+      "name": "石柱县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 138,
+      "name": "彭水县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 139,
+      "name": "垫江县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    },
+    {
+      "id": 140,
+      "name": "酉阳县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 19,
+      "districts": null
+    },
+    {
+      "id": 141,
+      "name": "秀山县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 20,
+      "districts": null
+    },
+    {
+      "id": 4164,
+      "name": "城口县",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 21,
+      "districts": null
+    },
+    {
+      "id": 48131,
+      "name": "璧山区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 22,
+      "districts": null
+    },
+    {
+      "id": 48132,
+      "name": "荣昌区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 23,
+      "districts": null
+    },
+    {
+      "id": 48133,
+      "name": "铜梁区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 24,
+      "districts": null
+    },
+    {
+      "id": 48201,
+      "name": "合川区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 25,
+      "districts": null
+    },
+    {
+      "id": 48202,
+      "name": "巴南区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 26,
+      "districts": null
+    },
+    {
+      "id": 48203,
+      "name": "北碚区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 27,
+      "districts": null
+    },
+    {
+      "id": 48204,
+      "name": "江津区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 28,
+      "districts": null
+    },
+    {
+      "id": 48205,
+      "name": "渝北区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 29,
+      "districts": null
+    },
+    {
+      "id": 48206,
+      "name": "长寿区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 30,
+      "districts": null
+    },
+    {
+      "id": 48207,
+      "name": "永川区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 31,
+      "districts": null
+    },
+    {
+      "id": 50950,
+      "name": "江北区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 32,
+      "districts": null
+    },
+    {
+      "id": 50951,
+      "name": "南岸区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 33,
+      "districts": null
+    },
+    {
+      "id": 50952,
+      "name": "九龙坡区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 34,
+      "districts": null
+    },
+    {
+      "id": 50953,
+      "name": "沙坪坝区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 35,
+      "districts": null
+    },
+    {
+      "id": 50954,
+      "name": "大渡口区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 36,
+      "districts": null
+    },
+    {
+      "id": 50995,
+      "name": "綦江区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 37,
+      "districts": null
+    },
+    {
+      "id": 51026,
+      "name": "渝中区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 38,
+      "districts": null
+    },
+    {
+      "id": 51027,
+      "name": "高新区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 39,
+      "districts": null
+    },
+    {
+      "id": 51028,
+      "name": "北部新区",
+      "parent_id": 4,
+      "level": 2,
+      "reorder": 40,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 5,
+  "name": "河北",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 5,
+  "districts": [
+    {
+      "id": 142,
+      "name": "石家庄市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 148,
+      "name": "邯郸市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 164,
+      "name": "邢台市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 199,
+      "name": "保定市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 224,
+      "name": "张家口市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 239,
+      "name": "承德市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 248,
+      "name": "秦皇岛市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 258,
+      "name": "唐山市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 264,
+      "name": "沧州市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 274,
+      "name": "廊坊市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 275,
+      "name": "衡水市",
+      "parent_id": 5,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 6,
+  "name": "山西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 6,
+  "districts": [
+    {
+      "id": 303,
+      "name": "太原市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 309,
+      "name": "大同市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 318,
+      "name": "阳泉市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 325,
+      "name": "晋城市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 330,
+      "name": "朔州市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 336,
+      "name": "晋中市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 350,
+      "name": "忻州市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 368,
+      "name": "吕梁市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 379,
+      "name": "临汾市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 398,
+      "name": "运城市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 3074,
+      "name": "长治市",
+      "parent_id": 6,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 7,
+  "name": "河南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 7,
+  "districts": [
+    {
+      "id": 412,
+      "name": "郑州市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 420,
+      "name": "开封市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 427,
+      "name": "洛阳市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 438,
+      "name": "平顶山市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 446,
+      "name": "焦作市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 454,
+      "name": "鹤壁市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 458,
+      "name": "新乡市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 468,
+      "name": "安阳市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 475,
+      "name": "濮阳市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 482,
+      "name": "许昌市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 489,
+      "name": "漯河市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 495,
+      "name": "三门峡市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 502,
+      "name": "南阳市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 517,
+      "name": "商丘市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 527,
+      "name": "周口市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 538,
+      "name": "驻马店市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 549,
+      "name": "信阳市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 2780,
+      "name": "济源市",
+      "parent_id": 7,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 8,
+  "name": "辽宁",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 8,
+  "districts": [
+    {
+      "id": 560,
+      "name": "沈阳市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 573,
+      "name": "大连市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 579,
+      "name": "鞍山市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 584,
+      "name": "抚顺市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 589,
+      "name": "本溪市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 593,
+      "name": "丹东市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 598,
+      "name": "锦州市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 604,
+      "name": "葫芦岛市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 609,
+      "name": "营口市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 613,
+      "name": "盘锦市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 617,
+      "name": "阜新市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 621,
+      "name": "辽阳市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 632,
+      "name": "朝阳市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 6858,
+      "name": "铁岭市",
+      "parent_id": 8,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 9,
+  "name": "吉林",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 9,
+  "districts": [
+    {
+      "id": 639,
+      "name": "长春市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 644,
+      "name": "吉林市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 651,
+      "name": "四平市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 657,
+      "name": "通化市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 664,
+      "name": "白山市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 674,
+      "name": "松原市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 681,
+      "name": "白城市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 687,
+      "name": "延边州",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2992,
+      "name": "辽源市",
+      "parent_id": 9,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 10,
+  "name": "黑龙江",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 10,
+  "districts": [
+    {
+      "id": 698,
+      "name": "哈尔滨市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 712,
+      "name": "齐齐哈尔市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 727,
+      "name": "鹤岗市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 731,
+      "name": "双鸭山市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 737,
+      "name": "鸡西市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 742,
+      "name": "大庆市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 753,
+      "name": "伊春市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 757,
+      "name": "牡丹江市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 765,
+      "name": "佳木斯市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 773,
+      "name": "七台河市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 776,
+      "name": "黑河市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 782,
+      "name": "绥化市",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 793,
+      "name": "大兴安岭地区",
+      "parent_id": 10,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 11,
+  "name": "内蒙古",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 11,
+  "districts": [
+    {
+      "id": 799,
+      "name": "呼和浩特市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 805,
+      "name": "包头市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 810,
+      "name": "乌海市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 812,
+      "name": "赤峰市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 823,
+      "name": "乌兰察布市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 835,
+      "name": "锡林郭勒盟",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 848,
+      "name": "呼伦贝尔市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 870,
+      "name": "鄂尔多斯市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 880,
+      "name": "巴彦淖尔市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 891,
+      "name": "阿拉善盟",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 895,
+      "name": "兴安盟",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 902,
+      "name": "通辽市",
+      "parent_id": 11,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 12,
+  "name": "江苏",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 12,
+  "districts": [
+    {
+      "id": 904,
+      "name": "南京市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 911,
+      "name": "徐州市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 919,
+      "name": "连云港市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 925,
+      "name": "淮安市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 933,
+      "name": "宿迁市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 939,
+      "name": "盐城市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 951,
+      "name": "扬州市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 959,
+      "name": "泰州市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 965,
+      "name": "南通市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 972,
+      "name": "镇江市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 978,
+      "name": "常州市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 984,
+      "name": "无锡市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 988,
+      "name": "苏州市",
+      "parent_id": 12,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 13,
+  "name": "山东",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 13,
+  "districts": [
+    {
+      "id": 1000,
+      "name": "济南市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1007,
+      "name": "青岛市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1016,
+      "name": "淄博市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1022,
+      "name": "枣庄市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1025,
+      "name": "东营市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1032,
+      "name": "潍坊市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1042,
+      "name": "烟台市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1053,
+      "name": "威海市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1058,
+      "name": "莱芜市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1060,
+      "name": "德州市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1072,
+      "name": "临沂市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 1081,
+      "name": "聊城市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 1090,
+      "name": "滨州市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 1099,
+      "name": "菏泽市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 1108,
+      "name": "日照市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 1112,
+      "name": "泰安市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 2900,
+      "name": "济宁市",
+      "parent_id": 13,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 14,
+  "name": "安徽",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 14,
+  "districts": [
+    {
+      "id": 1114,
+      "name": "铜陵市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1116,
+      "name": "合肥市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1121,
+      "name": "淮南市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1124,
+      "name": "淮北市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1127,
+      "name": "芜湖市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1132,
+      "name": "蚌埠市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1137,
+      "name": "马鞍山市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1140,
+      "name": "安庆市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1151,
+      "name": "黄山市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1159,
+      "name": "滁州市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1167,
+      "name": "阜阳市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 1174,
+      "name": "亳州市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 1180,
+      "name": "宿州市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 1201,
+      "name": "池州市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 1206,
+      "name": "六安市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 2971,
+      "name": "宣城市",
+      "parent_id": 14,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 15,
+  "name": "浙江",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 15,
+  "districts": [
+    {
+      "id": 1158,
+      "name": "宁波市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1213,
+      "name": "杭州市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1233,
+      "name": "温州市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1243,
+      "name": "嘉兴市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1250,
+      "name": "湖州市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1255,
+      "name": "绍兴市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1262,
+      "name": "金华市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1273,
+      "name": "衢州市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1280,
+      "name": "丽水市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1290,
+      "name": "台州市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1298,
+      "name": "舟山市",
+      "parent_id": 15,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 16,
+  "name": "福建",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 16,
+  "districts": [
+    {
+      "id": 1303,
+      "name": "福州市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1315,
+      "name": "厦门市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1317,
+      "name": "三明市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1329,
+      "name": "莆田市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1332,
+      "name": "泉州市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1341,
+      "name": "漳州市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1352,
+      "name": "南平市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1362,
+      "name": "龙岩市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1370,
+      "name": "宁德市",
+      "parent_id": 16,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 17,
+  "name": "湖北",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 17,
+  "districts": [
+    {
+      "id": 1381,
+      "name": "武汉市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1387,
+      "name": "黄石市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1396,
+      "name": "襄阳市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1405,
+      "name": "十堰市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1413,
+      "name": "荆州市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1421,
+      "name": "宜昌市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1432,
+      "name": "孝感市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1441,
+      "name": "黄冈市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1458,
+      "name": "咸宁市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1466,
+      "name": "恩施州",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1475,
+      "name": "鄂州市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 1477,
+      "name": "荆门市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 1479,
+      "name": "随州市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 2922,
+      "name": "潜江市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 2980,
+      "name": "天门市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 2983,
+      "name": "仙桃市",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 3154,
+      "name": "神农架林区",
+      "parent_id": 17,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 18,
+  "name": "湖南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 18,
+  "districts": [
+    {
+      "id": 1482,
+      "name": "长沙市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1488,
+      "name": "株洲市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1495,
+      "name": "湘潭市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1501,
+      "name": "衡阳市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1511,
+      "name": "邵阳市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1522,
+      "name": "岳阳市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1530,
+      "name": "常德市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1540,
+      "name": "张家界市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1544,
+      "name": "郴州市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1555,
+      "name": "益阳市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1560,
+      "name": "永州市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 1574,
+      "name": "怀化市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 1586,
+      "name": "娄底市",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 1592,
+      "name": "湘西州",
+      "parent_id": 18,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 19,
+  "name": "广东",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 19,
+  "districts": [
+    {
+      "id": 1601,
+      "name": "广州市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1607,
+      "name": "深圳市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1609,
+      "name": "珠海市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1611,
+      "name": "汕头市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1617,
+      "name": "韶关市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1627,
+      "name": "河源市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1634,
+      "name": "梅州市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1643,
+      "name": "惠州市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1650,
+      "name": "汕尾市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1655,
+      "name": "东莞市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1657,
+      "name": "中山市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 1659,
+      "name": "江门市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 1666,
+      "name": "佛山市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 1672,
+      "name": "阳江市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 1677,
+      "name": "湛江市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 1684,
+      "name": "茂名市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 1690,
+      "name": "肇庆市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 1698,
+      "name": "云浮市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    },
+    {
+      "id": 1704,
+      "name": "清远市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 19,
+      "districts": null
+    },
+    {
+      "id": 1705,
+      "name": "潮州市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 20,
+      "districts": null
+    },
+    {
+      "id": 1709,
+      "name": "揭阳市",
+      "parent_id": 19,
+      "level": 2,
+      "reorder": 21,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 20,
+  "name": "广西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 20,
+  "districts": [
+    {
+      "id": 1715,
+      "name": "南宁市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1720,
+      "name": "柳州市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1726,
+      "name": "桂林市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1740,
+      "name": "梧州市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1746,
+      "name": "北海市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1749,
+      "name": "防城港市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1753,
+      "name": "钦州市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1757,
+      "name": "贵港市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1761,
+      "name": "玉林市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1792,
+      "name": "贺州市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1806,
+      "name": "百色市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 1818,
+      "name": "河池市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 3044,
+      "name": "来宾市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 3168,
+      "name": "崇左市",
+      "parent_id": 20,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 21,
+  "name": "江西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 21,
+  "districts": [
+    {
+      "id": 1827,
+      "name": "南昌市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1832,
+      "name": "景德镇市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1836,
+      "name": "萍乡市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1842,
+      "name": "新余市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1845,
+      "name": "九江市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1857,
+      "name": "鹰潭市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1861,
+      "name": "上饶市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1874,
+      "name": "宜春市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1885,
+      "name": "抚州市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1898,
+      "name": "吉安市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 1911,
+      "name": "赣州市",
+      "parent_id": 21,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 22,
+  "name": "四川",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 22,
+  "districts": [
+    {
+      "id": 1930,
+      "name": "成都市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 1946,
+      "name": "自贡市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 1950,
+      "name": "攀枝花市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 1954,
+      "name": "泸州市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 1960,
+      "name": "绵阳市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 1962,
+      "name": "德阳市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 1977,
+      "name": "广元市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 1983,
+      "name": "遂宁市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 1988,
+      "name": "内江市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 1993,
+      "name": "乐山市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 2005,
+      "name": "宜宾市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 2016,
+      "name": "广安市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 2022,
+      "name": "南充市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 2033,
+      "name": "达州市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 2042,
+      "name": "巴中市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 2047,
+      "name": "雅安市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 2058,
+      "name": "眉山市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 2065,
+      "name": "资阳市",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    },
+    {
+      "id": 2070,
+      "name": "阿坝州",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 19,
+      "districts": null
+    },
+    {
+      "id": 2084,
+      "name": "甘孜州",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 20,
+      "districts": null
+    },
+    {
+      "id": 2103,
+      "name": "凉山州",
+      "parent_id": 22,
+      "level": 2,
+      "reorder": 21,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 23,
+  "name": "海南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 23,
+  "districts": [
+    {
+      "id": 2121,
+      "name": "海口市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 3034,
+      "name": "儋州市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 3115,
+      "name": "琼海市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 3137,
+      "name": "万宁市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 3173,
+      "name": "东方市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 3690,
+      "name": "三亚市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 3698,
+      "name": "文昌市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 3699,
+      "name": "五指山市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 3701,
+      "name": "临高县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 3702,
+      "name": "澄迈县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 3703,
+      "name": "定安县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 3704,
+      "name": "屯昌县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 3705,
+      "name": "昌江县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 3706,
+      "name": "白沙县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 3707,
+      "name": "琼中县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 3708,
+      "name": "陵水县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 3709,
+      "name": "保亭县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 3710,
+      "name": "乐东县",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    },
+    {
+      "id": 3711,
+      "name": "三沙市",
+      "parent_id": 23,
+      "level": 2,
+      "reorder": 19,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 24,
+  "name": "贵州",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 24,
+  "districts": [
+    {
+      "id": 2144,
+      "name": "贵阳市",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2150,
+      "name": "六盘水市",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2155,
+      "name": "遵义市",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2169,
+      "name": "铜仁市",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2180,
+      "name": "毕节市",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2189,
+      "name": "安顺市",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2196,
+      "name": "黔西南州",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2205,
+      "name": "黔东南州",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2222,
+      "name": "黔南州",
+      "parent_id": 24,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 25,
+  "name": "云南",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 25,
+  "districts": [
+    {
+      "id": 2235,
+      "name": "昆明市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2247,
+      "name": "曲靖市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2258,
+      "name": "玉溪市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2270,
+      "name": "昭通市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2281,
+      "name": "普洱市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2291,
+      "name": "临沧市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2298,
+      "name": "保山市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2304,
+      "name": "丽江市",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2309,
+      "name": "文山州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 2318,
+      "name": "红河州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 2332,
+      "name": "西双版纳州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 2336,
+      "name": "楚雄州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 2347,
+      "name": "大理州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 2360,
+      "name": "德宏州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 2366,
+      "name": "怒江州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 4108,
+      "name": "迪庆州",
+      "parent_id": 25,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 26,
+  "name": "西藏",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 26,
+  "districts": [
+    {
+      "id": 2951,
+      "name": "拉萨市",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 3107,
+      "name": "那曲地区",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 3129,
+      "name": "山南地区",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 3138,
+      "name": "昌都地区",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 3144,
+      "name": "日喀则地区",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 3970,
+      "name": "阿里地区",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 3971,
+      "name": "林芝市",
+      "parent_id": 26,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 27,
+  "name": "陕西",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 27,
+  "districts": [
+    {
+      "id": 2376,
+      "name": "西安市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2386,
+      "name": "铜川市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2390,
+      "name": "宝鸡市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2402,
+      "name": "咸阳市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2416,
+      "name": "渭南市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2428,
+      "name": "延安市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2442,
+      "name": "汉中市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2454,
+      "name": "榆林市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2468,
+      "name": "商洛市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 2476,
+      "name": "安康市",
+      "parent_id": 27,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 28,
+  "name": "甘肃",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 28,
+  "districts": [
+    {
+      "id": 2487,
+      "name": "兰州市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2492,
+      "name": "金昌市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2495,
+      "name": "白银市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2501,
+      "name": "天水市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2509,
+      "name": "嘉峪关市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2518,
+      "name": "平凉市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2525,
+      "name": "庆阳市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2534,
+      "name": "陇南市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2544,
+      "name": "武威市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 2549,
+      "name": "张掖市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 2556,
+      "name": "酒泉市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 2564,
+      "name": "甘南州",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 2573,
+      "name": "临夏州",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 3080,
+      "name": "定西市",
+      "parent_id": 28,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 29,
+  "name": "青海",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 29,
+  "districts": [
+    {
+      "id": 2580,
+      "name": "西宁市",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2585,
+      "name": "海东地区",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2592,
+      "name": "海北州",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2597,
+      "name": "黄南州",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2603,
+      "name": "海南州",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2605,
+      "name": "果洛州",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2612,
+      "name": "玉树州",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2620,
+      "name": "海西州",
+      "parent_id": 29,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 30,
+  "name": "宁夏",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 30,
+  "districts": [
+    {
+      "id": 2628,
+      "name": "银川市",
+      "parent_id": 30,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2632,
+      "name": "石嘴山市",
+      "parent_id": 30,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2637,
+      "name": "吴忠市",
+      "parent_id": 30,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2644,
+      "name": "固原市",
+      "parent_id": 30,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 3071,
+      "name": "中卫市",
+      "parent_id": 30,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 31,
+  "name": "新疆",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 31,
+  "districts": [
+    {
+      "id": 2652,
+      "name": "乌鲁木齐市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 2654,
+      "name": "克拉玛依市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    },
+    {
+      "id": 2656,
+      "name": "石河子市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 3,
+      "districts": null
+    },
+    {
+      "id": 2658,
+      "name": "吐鲁番地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 4,
+      "districts": null
+    },
+    {
+      "id": 2662,
+      "name": "哈密地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 5,
+      "districts": null
+    },
+    {
+      "id": 2666,
+      "name": "和田地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 6,
+      "districts": null
+    },
+    {
+      "id": 2675,
+      "name": "阿克苏地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 7,
+      "districts": null
+    },
+    {
+      "id": 2686,
+      "name": "喀什地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 8,
+      "districts": null
+    },
+    {
+      "id": 2699,
+      "name": "克孜勒苏柯尔克孜自治州",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 9,
+      "districts": null
+    },
+    {
+      "id": 2704,
+      "name": "巴音郭楞州",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 10,
+      "districts": null
+    },
+    {
+      "id": 2714,
+      "name": "昌吉州",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 11,
+      "districts": null
+    },
+    {
+      "id": 2723,
+      "name": "博尔塔拉州",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 12,
+      "districts": null
+    },
+    {
+      "id": 2727,
+      "name": "伊犁州",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 13,
+      "districts": null
+    },
+    {
+      "id": 2736,
+      "name": "塔城地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 14,
+      "districts": null
+    },
+    {
+      "id": 2744,
+      "name": "阿勒泰地区",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 15,
+      "districts": null
+    },
+    {
+      "id": 4110,
+      "name": "五家渠市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 16,
+      "districts": null
+    },
+    {
+      "id": 15945,
+      "name": "阿拉尔市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 17,
+      "districts": null
+    },
+    {
+      "id": 15946,
+      "name": "图木舒克市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 18,
+      "districts": null
+    },
+    {
+      "id": 53090,
+      "name": "铁门关市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 19,
+      "districts": null
+    },
+    {
+      "id": 53668,
+      "name": "昆玉市",
+      "parent_id": 31,
+      "level": 2,
+      "reorder": 20,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 32,
+  "name": "台湾",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 32,
+  "districts": [
+    {
+      "id": 2768,
+      "name": "台湾",
+      "parent_id": 32,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    }
+  ]
+},
+{
+  "id": 84,
+  "name": "钓鱼岛",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 33,
+  "districts": [
+    {
+      "id": 1310,
+      "name": "钓鱼岛",
+      "parent_id": 84,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    }
+  ]
+}]
