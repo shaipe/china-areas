@@ -16,3 +16,8 @@ serde_derive="*"
 [dependencies.lane_net]
 path="../lane/net"
 version="0.1.0"
+
+# 可以减少编译后的文件大小
+[profile.release]
+lto = true
+

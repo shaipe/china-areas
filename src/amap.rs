@@ -4,9 +4,8 @@
  */
 use serde_derive::{Deserialize, Serialize};
 use lane_net::get_str;
-use std::fs::File;
-use std::io::prelude::*;
 use regex::Regex;
+use crate::util::write_file;
 
 /// 高德地图返回接口数据类型定义
 #[derive(Debug, Clone, Deserialize, Serialize)]
@@ -72,16 +71,7 @@ pub fn start(f: FileFormat, sub_level: i32){
             Amap::new()
         }
     };
-    let ext = match f {
-        FileFormat::Sql => "sql",
-        FileFormat::Csv => "csv",
-        _ => "json"
-    };
-
-    let file_name = format!("./data/areas.{}", ext);
-    // println!("{}", file_name);
-    // return;
-
+    
     let mut res = Analyze::new().analyze_districts(a.districts, "-1", &f.clone());
 
     // 给定表结构
@@ -89,19 +79,9 @@ pub fn start(f: FileFormat, sub_level: i32){
         FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, ParentId, Name) VALUES ".to_owned()),
         _ => {}
     };
-    
-    let mut file = match File::create(file_name.clone()) {
-        Err(why) => panic!("couldn't create {}", why),
-        Ok(file) => file,
-    };
 
-    let res_str = res.join("\n");
-    match file.write_all(res_str.as_bytes()) {
-        Err(why) => {
-            panic!("couldn't write to : {}", why)
-        },
-        Ok(_) => {println!("successfully wrote to {}", file_name)},
-    };
+    // 把结果写入文件
+    write_file("amap", res, f);
     
     println!("高德地图行政区划接口分析结束");
 }
