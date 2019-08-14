@@ -81,7 +81,7 @@ pub fn start(f: FileFormat, sub_level: i32){
     };
 
     // 把结果写入文件
-    write_file("amap", res, f);
+    write_file("amap", res, sub_level, f);
     
     println!("高德地图行政区划接口分析结束");
 }

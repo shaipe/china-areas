@@ -5,7 +5,7 @@ use std::io::prelude::*;
 use std::path::Path;
 use std::fs::create_dir_all;
 
-pub fn write_file(source: &str, res: Vec<String>, f: FileFormat) {
+pub fn write_file(source: &str, res: Vec<String>, level: i32, f: FileFormat) {
     
     let ext = match f {
         FileFormat::Sql => "sql",
@@ -21,14 +21,24 @@ pub fn write_file(source: &str, res: Vec<String>, f: FileFormat) {
         create_dir_all(p);
     }
 
-    let file_name = format!("{}/areas.{}", file_dir, ext);
+    let file_name = format!("{}/areas-level{}.{}", file_dir, level, ext);
 
     let mut file = match File::create(file_name.clone()) {
         Err(why) => panic!("couldn't create {}", why),
         Ok(file) => file,
     };
 
-    let res_str = res.join("\n");
+    let res_str = match f {
+        FileFormat::Sql=> res.join(",\n"),
+        FileFormat::Json => {
+            let mut x: String = String::from("[");
+            x.push_str(&res.join(",\n"));
+            x.push_str("]");
+            x
+        },
+        FileFormat::Csv => res.join("\n")
+    };
+
     match file.write_all(res_str.as_bytes()) {
         Err(why) => {
             panic!("couldn't write to : {}", why)
