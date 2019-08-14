@@ -8,6 +8,7 @@ use lane_net::get_str;
 use crate::FileFormat;
 use crate::util::write_file;
 use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
+use std::convert::TryFrom;
 
 /// 京东地址数据接口地址
 const URL: &str = "https://d.jd.com/area/get?fid=";
@@ -70,43 +71,48 @@ pub fn start(f: FileFormat, sub_level: i32){
 
     if sub_level > 1 {
         
-        let m = MultiProgress::new();
-        let sty = ProgressStyle::default_bar()
-            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
-            .progress_chars("##-");
-
-        let pb = m.add(ProgressBar::new(provinces.len()));
-        pb.set_style(sty.clone());
-        let px = 1;
+        // let m = MultiProgress::new();
+        // let sty = ProgressStyle::default_bar()
+        //     .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+        //     .progress_chars("##-");
+        // 获取数组的长度转换为u64
+        let b: u64 = u64::try_from(provinces.len()).unwrap();
+        let pb = ProgressBar::new(b);
+        // pb.set_style(sty.clone());
+        // let mut px = 0;
 
         // 获取二级城市
         for prov in provinces {
+            println!("{}", prov.id);
             let cities = get_districts(prov.id);
             let mut cities_str = get_districts_str(prov.id, cities.clone(), &f);
             res.append(&mut cities_str);
 
-            // 获取区限级的数据
-            if sub_level > 2 {
-                for city in cities {
-                    let ars = get_districts(city.id);
-                    let mut ars_str = get_districts_str(city.id, ars.clone(), &f);
-                    res.append(&mut ars_str);
+            // // 获取区限级的数据
+            // if sub_level > 2 {
+            //     for city in cities {
+            //         let ars = get_districts(city.id);
+            //         let mut ars_str = get_districts_str(city.id, ars.clone(), &f);
+            //         res.append(&mut ars_str);
 
-                    // 获取镇级数据
-                    if sub_level > 3 {
-                        for a in ars {
-                            let towers = get_districts(a.id);
-                            let mut towers_str = get_districts_str(a.id, towers.clone(), &f);
-                            res.append(&mut towers_str);
-                        }
+            //         // 获取镇级数据
+            //         if sub_level > 3 {
+            //             for a in ars {
+            //                 let towers = get_districts(a.id);
+            //                 let mut towers_str = get_districts_str(a.id, towers.clone(), &f);
+            //                 res.append(&mut towers_str);
+            //             }
                         
-                    }
-                }
-            }
+            //         }
+            //     }
+            // }
 
-            pb.set_message(&format!("item #{}", px + 1));
+            // px += 1;
+            // pb.set_message(&format!("item #{}", px));
             pb.inc(1);
         }
+        // m.join_and_clear().unwrap();
+        pb.finish_with_message("done");
     }
 
     // 把结果写入文件
