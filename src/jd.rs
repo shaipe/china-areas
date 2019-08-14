@@ -7,10 +7,12 @@ use serde_derive::{Deserialize, Serialize};
 use lane_net::get_str;
 use crate::FileFormat;
 use crate::util::write_file;
+use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
 
+/// 京东地址数据接口地址
 const URL: &str = "https://d.jd.com/area/get?fid=";
 
-
+/// 地区结构定义
 #[derive(Debug, Clone, Deserialize, Serialize)]
 struct District {
     id: i32,
@@ -19,6 +21,7 @@ struct District {
     districts: Option<Vec<District>>
 }
 
+/// 地区信息结构扩展
 impl District {
     
     /// 将区域数据转换为字符串
@@ -39,7 +42,7 @@ impl District {
 }
 
 // static mut distrcts_str: Option<Vec<String>> = None;
-
+/// 京东数据获取入口
 pub fn start(f: FileFormat, sub_level: i32){
     println!("{:?} {}, 开始京东数据分析...", f, sub_level);
     
@@ -56,7 +59,7 @@ pub fn start(f: FileFormat, sub_level: i32){
     let mut res: Vec<String> = vec![];
 
     let provinces = get_province("china");
-    let mut x = get_districts_str(1, provinces.clone(), &f);
+    let mut x = get_districts_str(0, provinces.clone(), &f);
     res.append(&mut x);
 
     // 给定表结构
@@ -65,32 +68,51 @@ pub fn start(f: FileFormat, sub_level: i32){
         _ => {}
     };
 
+    if sub_level > 1 {
+        
+        let m = MultiProgress::new();
+        let sty = ProgressStyle::default_bar()
+            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+            .progress_chars("##-");
+
+        let pb = m.add(ProgressBar::new(provinces.len()));
+        pb.set_style(sty.clone());
+        let px = 1;
+
+        // 获取二级城市
+        for prov in provinces {
+            let cities = get_districts(prov.id);
+            let mut cities_str = get_districts_str(prov.id, cities.clone(), &f);
+            res.append(&mut cities_str);
+
+            // 获取区限级的数据
+            if sub_level > 2 {
+                for city in cities {
+                    let ars = get_districts(city.id);
+                    let mut ars_str = get_districts_str(city.id, ars.clone(), &f);
+                    res.append(&mut ars_str);
+
+                    // 获取镇级数据
+                    if sub_level > 3 {
+                        for a in ars {
+                            let towers = get_districts(a.id);
+                            let mut towers_str = get_districts_str(a.id, towers.clone(), &f);
+                            res.append(&mut towers_str);
+                        }
+                        
+                    }
+                }
+            }
+
+            pb.set_message(&format!("item #{}", px + 1));
+            pb.inc(1);
+        }
+    }
+
     // 把结果写入文件
     write_file("jd", res, f);
 
     println!("京东行政区划接口分析结束");
-
-    // if sub_level > 1 {
-    //     // 对省进行处理
-    //     for prov in provinces {
-    //         let cities = get_districts(prov.id);
-    //         if sub_level > 2 {
-    //             for city in cities {
-    //                 let ars = get_districts(city.id);
-    //                 if sub_level > 3 {
-    //                     for a in ars {
-    //                         let towers = get_districts(a.id);
-    //                     }
-                        
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // println!("{}", format!("{}{}", URL, "0"));
-    // let url = format!("{}{}", URL, "0");
-    // let text = get_str(&url);
-    // println!("{:?}", text);
 }
 
 

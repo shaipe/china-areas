@@ -12,6 +12,7 @@ regex="*"
 serde="*"
 serde_json="*"
 serde_derive="*"
+indicatif="*"
 
 [dependencies.lane_net]
 path="../lane/net"
