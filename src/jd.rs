@@ -159,20 +159,20 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
                     let a_s = get_districts(c.id);
                     let mut mas: Vec<District> = vec![];
                     let mut a_order = 1;    
-                    for mut a in a_s.clone() {
+                    for mut a in a_s {
                         // 获取乡镇
                         if sub_level > 3 {
                             let ts = get_districts(a.id);
                             let mut mts: Vec<District> = vec![];
                             let mut t_order = 1;
-                            for mut t in ts.clone() {
+                            for mut t in ts {
                                 t.level = Some(4);
                                 t.reorder = Some(t_order);
                                 t.parent_id = Some(a.id);
                                 mts.push(t);
                                 t_order += 1;
                             }
-                            a.districts = Some(ts);
+                            a.districts = Some(mts);
                         }
                         //
                         a.level = Some(3);
@@ -182,7 +182,7 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
                         a_order += 1;
                     }
 
-                    c.districts = Some(a_s);
+                    c.districts = Some(mas);
                 }
                 c.level = Some(2);
                 c.reorder = Some(c_order);
