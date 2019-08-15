@@ -5,8 +5,8 @@
 
 use serde_derive::{Deserialize, Serialize};
 use lane_net::get_str;
-use crate::FileFormat;
-use crate::util::write_file;
+use crate::{FileFormat, ApiSource};
+use crate::util::{write_file, read_content};
 use indicatif::{ProgressBar, ProgressStyle};
 use std::convert::TryFrom;
 
@@ -70,10 +70,98 @@ pub fn start(f: FileFormat, sub_level: i32){
 
     println!("京东行政区划接口分析结束");
 }
+use crate::standard::StdDistrict;
+use std::collections::HashMap;
+use crate::amap::HashAmap;
 
-// 把json文件格式的数据转换为其他格式的数据
-fn json_to_format(file_name: &str, f: FileFormat) -> Vec<String> {
-    vec![]
+/// 将京东的行政区数据转换为标准行政区划
+pub fn to_standaard(source: ApiSource, f: FileFormat, level: i32) {
+    let dists = load_json(level);
+    let codes = match source {
+        ApiSource::Amap => {
+            // 从高德中获取名称和行政编码
+            let mut ap = HashAmap::new();
+            ap.get_maps(level)
+        },
+        _ => {
+           HashMap::new()
+        }
+    };
+    let res = get_std_districts(dists, f, level, codes);
+    println!("{:?}", res);
+
+}
+
+
+fn get_std_districts(dists: Vec<District>, fmat: FileFormat, level: i32, codes: HashMap<String, String>) -> Vec<StdDistrict>{
+    let mut ds: Vec<StdDistrict> = vec![];
+    // 省级
+    for p in dists {
+        let mut sp = StdDistrict::new();
+        sp.name = p.name;
+        sp.level = p.level.unwrap();
+        sp.reorder = p.reorder.unwrap();
+
+        let mut scs: Vec<StdDistrict> = vec![];
+        // 市级
+        if level > 1 {
+            for c in p.districts.unwrap() {
+                let mut sc = StdDistrict::new();
+                sc.name = c.name;
+                sc.level = c.level.unwrap();
+                sc.reorder = c.reorder.unwrap();
+
+                let mut sas: Vec<StdDistrict> = vec![];
+                // 区县级
+                if level > 2 {
+                    
+                    for a in c.districts.unwrap() {
+
+                        let mut sa = StdDistrict::new();
+                        sa.name = a.name;
+                        sa.level = a.level.unwrap();
+                        sa.reorder = a.reorder.unwrap();
+
+                        let mut sts:Vec<StdDistrict> = vec![];
+                        // 乡镇级
+                        if level > 3 {
+                            for t in a.districts.unwrap() {
+                                let mut st = StdDistrict::new();
+                                st.name = t.name;
+                                st.level = t.level.unwrap();
+                                st.reorder = t.reorder.unwrap();
+                                st.districts = Some(vec![]);
+                                sts.push(st);
+                            }
+                        }
+                        sa.districts = Some(sts);
+                        sas.push(sa);
+                    }
+                    
+                }
+                sc.districts = Some(sas);
+                scs.push(sc);
+            }
+        }
+        sp.districts = Some(scs);
+        ds.push(sp);
+    }
+
+    ds
+}
+
+fn get_std_districts_str(fmat: FileFormat, dists: Vec<District>) -> Vec<String> {
+    let mut dists_str: Vec<String> = vec![];
+    for dist in dists {
+        dists_str.push(dist.to_str(&fmat));
+    }
+    dists_str
+}
+
+fn load_json(level:i32) -> Vec<District> {
+    let json_str = read_content("jd", level);
+    let data: Vec<District> = serde_json::from_str(&json_str).unwrap();
+    data
 }
 
 /// 获取出非json格式的数据

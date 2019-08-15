@@ -5,6 +5,7 @@
 use serde_derive::{Deserialize, Serialize};
 use lane_net::get_str;
 use regex::Regex;
+use std::collections::HashMap;
 use crate::util::write_file;
 
 /// 高德地图返回接口数据类型定义
@@ -33,6 +34,7 @@ struct District {
     name: String,
     center: String,
     level: String,
+    parent_code: Option<String>,
     districts: Vec<District>
 }
 
@@ -142,7 +144,6 @@ impl Analyze {
 }
 
 
-
 /// 接口url地址
 const URL: &str = "https://restapi.amap.com/v3/config/district?";
 /// 高德地图开发者key
@@ -165,3 +166,70 @@ fn fetch_province(sub_level: i32) -> String {
 //     let html = get_str(&url);
 //     println!("{:?}", html);
 // }
+
+/// 高德地图的行政区划字典对象
+pub struct HashAmap{
+    maps: HashMap<String, String>
+}
+
+
+
+impl HashAmap {
+
+    pub fn new() -> Self {
+        HashAmap {
+            maps: HashMap::new()
+        }
+    }
+
+    /// 获取对应级次的所有行政区名称和编码
+    pub fn get_maps(&mut self, level: i32) -> HashMap<String, String> {
+        // let mut codes: HashMap<String, String> = HashMap::new();
+        use crate::util::read_content;
+
+        println!("正在通过高德接口获取数据...");
+        let content = read_content("amap", level);
+        let provinces: Vec<District> = serde_json::from_str(&content).unwrap();
+        
+        // // 获取所有的数据
+        // let province = fetch_province(level);
+        // println!("获取数据完成,正在对数据进行分析处理...");
+        // // println!("{:#?}", province);
+        // let a: Amap = match serde_json::from_str(&province){
+        //     Ok(z) => z,
+        //     Err(e) => {
+        //         println!("{:?}", e);
+        //         Amap::new()
+        //     }
+        // };
+
+        // 采用递归的方式处理子级
+        self.get_districts_map(provinces, 0);
+
+        self.maps.clone()
+    }
+
+    /// 递归的形式处理获取字典
+    fn get_districts_map(&mut self, dists: Vec<District>, level: i32) {
+    
+        for dist in dists {
+            let re_zero = Regex::new("(0+)$").unwrap();
+            let name =  match level {
+                1 => dist.name.replace("省", ""),
+                2 => dist.name.replace("市", ""),
+                _ => dist.name
+            };
+            let code = re_zero.replace(&dist.adcode, "");
+            let pcode = match dist.parent_code {
+                Some(c) => c,
+                None => "".to_owned()
+            };
+            let parent_code = re_zero.replace(&pcode, "");
+            self.maps.insert(name, format!("{},{}", code, parent_code));
+            // 递归进行子级处理
+            if dist.districts.len() > 0 {
+                self.get_districts_map(dist.districts, level+1);
+            }
+        }
+    }
+}

@@ -13,6 +13,7 @@ mod amap;
 mod jd;
 mod mca;
 mod stats;
+mod standard;
 
 // 
 use std::env;
@@ -98,6 +99,8 @@ fn main() {
         "jd" => jd::start(fmat, level),
         "mca" => mca::start(fmat, level),
         "stats" => stats::start(fmat, level),
+        "std" => standard::start(fmat, level),
+        "jd_std" => jd::to_standaard(ApiSource::Amap, fmat, level),
         _ => amap::start(fmat, level)
     };
     
