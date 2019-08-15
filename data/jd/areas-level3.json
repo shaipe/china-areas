@@ -14817,208 +14817,7 @@
       "parent_id": 4,
       "level": 2,
       "reorder": 31,
-      "districts": [
-        {
-          "id": 48257,
-          "name": "双竹镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 1,
-          "districts": null
-        },
-        {
-          "id": 48258,
-          "name": "三教镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 2,
-          "districts": null
-        },
-        {
-          "id": 48259,
-          "name": "大安镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 3,
-          "districts": null
-        },
-        {
-          "id": 48260,
-          "name": "陈食镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 4,
-          "districts": null
-        },
-        {
-          "id": 48261,
-          "name": "板桥镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 5,
-          "districts": null
-        },
-        {
-          "id": 48262,
-          "name": "宝峰镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 6,
-          "districts": null
-        },
-        {
-          "id": 48263,
-          "name": "临江镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 7,
-          "districts": null
-        },
-        {
-          "id": 48264,
-          "name": "红炉镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 8,
-          "districts": null
-        },
-        {
-          "id": 48265,
-          "name": "吉安镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 9,
-          "districts": null
-        },
-        {
-          "id": 48266,
-          "name": "金龙镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 10,
-          "districts": null
-        },
-        {
-          "id": 48267,
-          "name": "来苏镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 11,
-          "districts": null
-        },
-        {
-          "id": 48268,
-          "name": "青峰镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 12,
-          "districts": null
-        },
-        {
-          "id": 48270,
-          "name": "双石镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 13,
-          "districts": null
-        },
-        {
-          "id": 48271,
-          "name": "松溉镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 14,
-          "districts": null
-        },
-        {
-          "id": 48272,
-          "name": "五间镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 15,
-          "districts": null
-        },
-        {
-          "id": 48273,
-          "name": "仙龙镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 16,
-          "districts": null
-        },
-        {
-          "id": 48274,
-          "name": "永荣镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 17,
-          "districts": null
-        },
-        {
-          "id": 48275,
-          "name": "朱沱镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 18,
-          "districts": null
-        },
-        {
-          "id": 48276,
-          "name": "何埂镇",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 19,
-          "districts": null
-        },
-        {
-          "id": 52495,
-          "name": "城区",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 20,
-          "districts": null
-        },
-        {
-          "id": 54781,
-          "name": "中山路街道",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 21,
-          "districts": null
-        },
-        {
-          "id": 54782,
-          "name": "胜利路街道",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 22,
-          "districts": null
-        },
-        {
-          "id": 54783,
-          "name": "南大街街道",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 23,
-          "districts": null
-        },
-        {
-          "id": 54784,
-          "name": "茶山竹海街道",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 24,
-          "districts": null
-        },
-        {
-          "id": 58507,
-          "name": "卫星湖街道",
-          "parent_id": 48207,
-          "level": 3,
-          "reorder": 25,
-          "districts": null
-        }
-      ]
+      "districts": []
     },
     {
       "id": 50950,
@@ -43201,64 +43000,7 @@
       "parent_id": 28,
       "level": 2,
       "reorder": 6,
-      "districts": [
-        {
-          "id": 2519,
-          "name": "华亭县",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 1,
-          "districts": null
-        },
-        {
-          "id": 2520,
-          "name": "崇信县",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 2,
-          "districts": null
-        },
-        {
-          "id": 2521,
-          "name": "泾川县",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 3,
-          "districts": null
-        },
-        {
-          "id": 2522,
-          "name": "灵台县",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 4,
-          "districts": null
-        },
-        {
-          "id": 2524,
-          "name": "庄浪县",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 5,
-          "districts": null
-        },
-        {
-          "id": 3023,
-          "name": "崆峒区",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 6,
-          "districts": null
-        },
-        {
-          "id": 3998,
-          "name": "静宁县",
-          "parent_id": 2518,
-          "level": 3,
-          "reorder": 7,
-          "districts": null
-        }
-      ]
+      "districts": []
     },
     {
       "id": 2525,
@@ -45696,6 +45438,89 @@
           "parent_id": 1310,
           "level": 3,
           "reorder": 1,
+          "districts": null
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": 52993,
+  "name": "港澳",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 34,
+  "districts": [
+    {
+      "id": 52994,
+      "name": "香港特别行政区",
+      "parent_id": 52993,
+      "level": 2,
+      "reorder": 1,
+      "districts": [
+        {
+          "id": 53013,
+          "name": "香港岛",
+          "parent_id": 52994,
+          "level": 3,
+          "reorder": 1,
+          "districts": null
+        },
+        {
+          "id": 53014,
+          "name": "九龙",
+          "parent_id": 52994,
+          "level": 3,
+          "reorder": 2,
+          "districts": null
+        },
+        {
+          "id": 53015,
+          "name": "新界",
+          "parent_id": 52994,
+          "level": 3,
+          "reorder": 3,
+          "districts": null
+        }
+      ]
+    },
+    {
+      "id": 52995,
+      "name": "澳门特别行政区",
+      "parent_id": 52993,
+      "level": 2,
+      "reorder": 2,
+      "districts": [
+        {
+          "id": 53016,
+          "name": "澳门特别行政区",
+          "parent_id": 52995,
+          "level": 3,
+          "reorder": 1,
+          "districts": null
+        },
+        {
+          "id": 53017,
+          "name": "澳门半岛",
+          "parent_id": 52995,
+          "level": 3,
+          "reorder": 2,
+          "districts": null
+        },
+        {
+          "id": 53018,
+          "name": "凼仔",
+          "parent_id": 52995,
+          "level": 3,
+          "reorder": 3,
+          "districts": null
+        },
+        {
+          "id": 53019,
+          "name": "路凼城",
+          "parent_id": 52995,
+          "level": 3,
+          "reorder": 4,
           "districts": null
         }
       ]

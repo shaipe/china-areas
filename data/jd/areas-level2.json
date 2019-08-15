@@ -3934,4 +3934,29 @@
       "districts": null
     }
   ]
+},
+{
+  "id": 52993,
+  "name": "港澳",
+  "parent_id": 1,
+  "level": 1,
+  "reorder": 34,
+  "districts": [
+    {
+      "id": 52994,
+      "name": "香港特别行政区",
+      "parent_id": 52993,
+      "level": 2,
+      "reorder": 1,
+      "districts": null
+    },
+    {
+      "id": 52995,
+      "name": "澳门特别行政区",
+      "parent_id": 52993,
+      "level": 2,
+      "reorder": 2,
+      "districts": null
+    }
+  ]
 }]

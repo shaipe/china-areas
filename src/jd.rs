@@ -7,7 +7,7 @@ use serde_derive::{Deserialize, Serialize};
 use lane_net::get_str;
 use crate::FileFormat;
 use crate::util::write_file;
-use indicatif::{MultiProgress, ProgressBar, ProgressStyle};
+use indicatif::{ProgressBar, ProgressStyle};
 use std::convert::TryFrom;
 
 /// 京东地址数据接口地址
@@ -71,6 +71,12 @@ pub fn start(f: FileFormat, sub_level: i32){
     println!("京东行政区划接口分析结束");
 }
 
+// 把json文件格式的数据转换为其他格式的数据
+fn json_to_format(file_name: &str, f: FileFormat) -> Vec<String> {
+    vec![]
+}
+
+/// 获取出非json格式的数据
 fn get_districts_no_json (f: FileFormat, sub_level: i32) -> Vec<String> {
 
     let mut res: Vec<String> = vec![];
@@ -81,7 +87,7 @@ fn get_districts_no_json (f: FileFormat, sub_level: i32) -> Vec<String> {
 
     // 给定表结构
     match f {
-        FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, ParentId, Name) VALUES ".to_owned()),
+        FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, Name, ParentId, Level, Reorder) VALUES ".to_owned()),
         _ => {}
     };
 
@@ -131,6 +137,7 @@ fn get_districts_no_json (f: FileFormat, sub_level: i32) -> Vec<String> {
     res
 }
 
+/// 根据给定的级次获取出行政区划的json格式数据
 fn get_districts_json(sub_level: i32) -> Vec<String> {
     let provinces = get_province("china");
     let mut res: Vec<String> = vec![];
@@ -202,7 +209,7 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
         let json_res = serde_json::to_string_pretty(&p);
         let json_str = match json_res {
             Ok(s) => s,
-            Err(e) => String::from("xx")
+            Err(_) => String::from("xx")
         };
         res.push(json_str);
     }
@@ -242,6 +249,7 @@ fn get_districts(id: i32) -> Vec<District>{
 }
 
 /// 获取中华人民共和国省份
+/// https://d.jd.com/area/get?fid=4744 包含中国所有的省以及港澳台地区
 fn get_province(scope: &str) -> Vec<District>{
     let url = format!("{}{}", URL, "0");
     let html = get_str(&url);
@@ -252,7 +260,8 @@ fn get_province(scope: &str) -> Vec<District>{
     else{
         let mut dists: Vec<District> = vec![];
         for mut district in districts {
-            if district.id < 100 {
+            // 只取中国大陆和港奥,台湾
+            if district.id < 100 || district.id == 52993 {
                 district.parent_id = Some(1);
                 dists.push(district)
             }
