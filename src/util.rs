@@ -47,7 +47,7 @@ pub fn write_file(source: &str, res: Vec<String>, level: i32, f: FileFormat) {
 /// 读取文本文件中的内容
 pub fn read_content(source: &str, level: i32) -> String {
     let file_name = format!("./data/{}/areas-level{}.json", source, level);
-  
+    println!("{:?}", file_name);
     let content = match read_to_string(file_name) {
         Err(why) => panic!("couldn't create {}", why),
         Ok(cnt) => cnt,

@@ -74,89 +74,159 @@ use crate::standard::StdDistrict;
 use std::collections::HashMap;
 use crate::amap::HashAmap;
 
-/// 将京东的行政区数据转换为标准行政区划
-pub fn to_standaard(source: ApiSource, f: FileFormat, level: i32) {
-    let dists = load_json(level);
-    let codes = match source {
-        ApiSource::Amap => {
-            // 从高德中获取名称和行政编码
-            let mut ap = HashAmap::new();
-            ap.get_maps(level)
-        },
-        _ => {
-           HashMap::new()
-        }
-    };
-    let res = get_std_districts(dists, f, level, codes);
-    println!("{:?}", res);
-
+pub struct JDStandard {
+    level: i32,
+    codes: HashMap<String, String>,
+    districts: Vec<StdDistrict>,
+    districts_str: Vec<String>
 }
 
+impl JDStandard {
 
-fn get_std_districts(dists: Vec<District>, fmat: FileFormat, level: i32, codes: HashMap<String, String>) -> Vec<StdDistrict>{
-    let mut ds: Vec<StdDistrict> = vec![];
-    // 省级
-    for p in dists {
-        let mut sp = StdDistrict::new();
-        sp.name = p.name;
-        sp.level = p.level.unwrap();
-        sp.reorder = p.reorder.unwrap();
-
-        let mut scs: Vec<StdDistrict> = vec![];
-        // 市级
-        if level > 1 {
-            for c in p.districts.unwrap() {
-                let mut sc = StdDistrict::new();
-                sc.name = c.name;
-                sc.level = c.level.unwrap();
-                sc.reorder = c.reorder.unwrap();
-
-                let mut sas: Vec<StdDistrict> = vec![];
-                // 区县级
-                if level > 2 {
-                    
-                    for a in c.districts.unwrap() {
-
-                        let mut sa = StdDistrict::new();
-                        sa.name = a.name;
-                        sa.level = a.level.unwrap();
-                        sa.reorder = a.reorder.unwrap();
-
-                        let mut sts:Vec<StdDistrict> = vec![];
-                        // 乡镇级
-                        if level > 3 {
-                            for t in a.districts.unwrap() {
-                                let mut st = StdDistrict::new();
-                                st.name = t.name;
-                                st.level = t.level.unwrap();
-                                st.reorder = t.reorder.unwrap();
-                                st.districts = Some(vec![]);
-                                sts.push(st);
-                            }
-                        }
-                        sa.districts = Some(sts);
-                        sas.push(sa);
-                    }
-                    
-                }
-                sc.districts = Some(sas);
-                scs.push(sc);
+    pub fn new(source: ApiSource, level: i32) -> Self {
+        let codes = match source {
+            ApiSource::Amap => {
+                // 从高德中获取名称和行政编码
+                let mut ap = HashAmap::new();
+                ap.get_maps(level)
+            },
+            _ => {
+            HashMap::new()
             }
+        };
+        println!("{:?}", codes);
+        JDStandard{
+            level: level,
+            codes: codes,
+            districts: vec![],
+            districts_str: vec![]
         }
-        sp.districts = Some(scs);
-        ds.push(sp);
     }
 
-    ds
+    /// 将京东的行政区数据转换为标准行政区划
+    pub fn to_standaard(&self, fmat: FileFormat){
+        let dists = load_json(self.level);
+    
+        let res = self.get_districts(dists, fmat.clone());
+
+        write_file("std", res, self.level, fmat);
+    }
+
+    fn get_code(&self, name: String) -> (String, String) {
+        let tc: &str = match self.codes.get(&name) {
+            Some(c) => c,
+            None => ","
+        };
+        // println!("{}", name);
+        let tcs: Vec<&str> = tc.split(",").collect();
+        // println!("{:?}", tcs);
+        (tcs[0].to_owned(), tcs[1].to_owned())
+    }
+
+    fn get_districts(&self, dists: Vec<District>, fmat: FileFormat) -> Vec<String>{
+        let level = self.level;
+        let mut ds: Vec<StdDistrict> = vec![];
+        let mut strs:Vec<String> = vec![];
+
+        let sty = ProgressStyle::default_bar()
+            .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+            .progress_chars("##-");
+        // 获取数组的长度转换为u64
+        let b: u64 = u64::try_from(dists.len()).unwrap();
+        let pb = ProgressBar::new(b);
+        pb.set_style(sty.clone());
+
+        // 省级
+        for p in dists {
+            pb.inc(1);
+            let mut sp = StdDistrict::new();
+            let pcs: (String, String) = self.get_code(p.name.clone());
+            // print!("{:?}", pcs);
+            sp.name = p.name;
+            sp.level = p.level.unwrap();
+            sp.reorder = p.reorder.unwrap();
+            sp.code = pcs.0;
+            sp.parent_code = pcs.1;
+            strs.push(sp.to_str(&fmat.clone()));
+
+            let mut scs: Vec<StdDistrict> = vec![];
+            // 市级
+            if level > 1 {
+                for c in p.districts.unwrap() {
+                    let mut sc = StdDistrict::new();
+                    sc.name = c.name;
+                    sc.level = c.level.unwrap();
+                    sc.reorder = c.reorder.unwrap();
+
+                    let ccs: (String, String) = self.get_code(sc.name.clone());
+                    sc.code = ccs.0;
+                    sc.parent_code = ccs.1;
+                    strs.push(sc.to_str(&fmat.clone()));
+
+                    let mut sas: Vec<StdDistrict> = vec![];
+                    // 区县级
+                    if level > 2 {
+                        
+                        for a in c.districts.unwrap() {
+
+                            let mut sa = StdDistrict::new();
+                            sa.name = a.name;
+                            sa.level = a.level.unwrap();
+                            sa.reorder = a.reorder.unwrap();
+
+                            let cas: (String, String) = self.get_code(sa.name.clone());
+                            sa.code = cas.0;
+                            sa.parent_code = cas.1;
+                            strs.push(sa.to_str(&fmat.clone()));
+
+                            let mut sts:Vec<StdDistrict> = vec![];
+                            // 乡镇级
+                            if level > 3 {
+                                for t in a.districts.unwrap() {
+                                    let mut st = StdDistrict::new();
+                                    st.name = t.name;
+                                    st.level = t.level.unwrap();
+                                    st.reorder = t.reorder.unwrap();
+
+                                    let cts: (String, String) = self.get_code(st.name.clone());
+                                    st.code = cts.0;
+                                    st.parent_code = cts.1;
+                                    strs.push(st.to_str(&fmat.clone()));
+
+                                    st.districts = Some(vec![]);
+                                    sts.push(st);
+                                }
+                            }
+                            sa.districts = Some(sts);
+                            sas.push(sa);
+                        }
+                        
+                    }
+                    sc.districts = Some(sas);
+                    scs.push(sc);
+                }
+            }
+            sp.districts = Some(scs);
+            ds.push(sp);
+        }
+        pb.finish_with_message("done");
+        strs
+    }
+
+    fn get_std_districts_str(&self, fmat: FileFormat, dists: Vec<District>) -> Vec<String> {
+        let mut dists_str: Vec<String> = vec![];
+        for dist in dists {
+            dists_str.push(dist.to_str(&fmat));
+        }
+        dists_str
+    }
 }
 
-fn get_std_districts_str(fmat: FileFormat, dists: Vec<District>) -> Vec<String> {
-    let mut dists_str: Vec<String> = vec![];
-    for dist in dists {
-        dists_str.push(dist.to_str(&fmat));
-    }
-    dists_str
-}
+
+
+
+
+
 
 fn load_json(level:i32) -> Vec<District> {
     let json_str = read_content("jd", level);

@@ -20,6 +20,15 @@
 * 京东地址公开数据
     * [京东接口数据](https://d.jd.com/area/get?fid=0)
 
+* 阿里云公开数据(这个数据已经过时)
+
+    * [省](http://datavmap-public.oss-cn-hangzhou.aliyuncs.com/areas/csv/100000_province.json)
+    * [市](http://datavmap-public.oss-cn-hangzhou.aliyuncs.com/areas/csv/440000_city.json)
+    * [县区](http://datavmap-public.oss-cn-hangzhou.aliyuncs.com/areas/csv/440100_district.json)
+
+有知道最新数据接口的朋友,麻烦提交一下,非常感谢!
+
+
 ## 使用说明
 
     本项目采用 `rust-lang` 编写, release 到bin目录的各平台中,直接可以使用工具更新最新的数据到本地

@@ -74,11 +74,16 @@ pub fn start(f: FileFormat, sub_level: i32){
         }
     };
     
-    let mut res = Analyze::new().analyze_districts(a.districts, "-1", &f.clone());
+    let mut res = match f {
+        FileFormat::Json => {
+            to_json(a.districts)
+        }
+        _ => Analyze::new().analyze_districts(a.districts, "-1", 0, &f.clone())
+    };
 
     // 给定表结构
     match f {
-        FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, ParentId, Name) VALUES ".to_owned()),
+        FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, ParentId, Name, Layer, Reorder) VALUES ".to_owned()),
         _ => {}
     };
 
@@ -86,6 +91,14 @@ pub fn start(f: FileFormat, sub_level: i32){
     write_file("amap", res, sub_level, f);
     
     println!("高德地图行政区划接口分析结束");
+}
+
+fn to_json(districts: Vec<District>) -> Vec<String> {
+    let mut rs: Vec<String> = vec![];
+    for d in districts {
+        rs.push(serde_json::to_string_pretty(&d).unwrap());
+    }
+    rs
 }
 
 struct Analyze {
@@ -101,25 +114,27 @@ impl Analyze {
     }
 
     /// 分析区域组合
-    fn analyze_districts(&mut self, districts: Vec<District>, parent_code: &str, fmat: &FileFormat) -> Vec<String> {
+    fn analyze_districts(&mut self, districts: Vec<District>, parent_code: &str, level: i32, fmat: &FileFormat) -> Vec<String> {
         let mut res: Vec<String> = vec![];
+        let mut reorder: i32 = 1;
         for district in districts {
             let dis = district.clone();
             let code = district.adcode;
-            let dis_res = self.analyze_district(dis, fmat.clone(), parent_code);
+            let dis_res = self.analyze_district(dis, fmat.clone(), parent_code, level, reorder);
             res.push(dis_res);
             if district.districts.len() > 0 {
                 self.district_count = 0;
-                let mut diss_res = self.analyze_districts(district.districts, &code, fmat);
+                let mut diss_res = self.analyze_districts(district.districts, &code, level+1, fmat);
                 res.append(&mut diss_res);
             }
+            reorder += 1;
         }
         res
     }
 
     /// 单个区域数据分析
-    fn analyze_district(&mut self, district: District, format: FileFormat, parent_code: &str) -> String {
-        let re_zero = Regex::new("(0+)$").unwrap();
+    fn analyze_district(&mut self, district: District, format: FileFormat, parent_code: &str, level: i32, reorder: i32) -> String {
+        let re_zero = Regex::new("(00)+$").unwrap();
         let p = re_zero.replace(parent_code, "");
         let code = re_zero.replace(&district.adcode, "");
         let mut codex = format!("{}", code);
@@ -135,9 +150,19 @@ impl Analyze {
 
             codex = format!("{}{}", code, c);
         }
+
+        let re_province = Regex::new("省|市|维吾尔自治区|回族自治区|自治区|壮族自治区").unwrap();
+        let re_city = Regex::new("市").unwrap();
+        let name =  match level {
+            1 => format!("{}", re_province.replace(&district.clone().name, "")),
+            2 => format!("{}", re_city.replace(&district.clone().name, "")),
+            _ => district.clone().name
+        };
+
+
         match format {
-            FileFormat::Sql => format!("({},{},'{}'),", codex, p, district.name),
-            FileFormat::Csv => format!("{},{},{},", codex, p, district.name),
+            FileFormat::Sql => format!("({},{},'{}',{},{})", codex, p, name, level, reorder),
+            FileFormat::Csv => format!("{},{},{},{},{}", codex, p, name, level, reorder),
             FileFormat::Json => serde_json::to_string_pretty(&district).unwrap()
         }
     }
@@ -204,31 +229,35 @@ impl HashAmap {
         // };
 
         // 采用递归的方式处理子级
-        self.get_districts_map(provinces, 0);
-
+        self.get_districts_map(provinces, 0, "".to_owned());
+        // println!("{:?}", self.maps);
         self.maps.clone()
     }
 
     /// 递归的形式处理获取字典
-    fn get_districts_map(&mut self, dists: Vec<District>, level: i32) {
+    fn get_districts_map(&mut self, dists: Vec<District>, level: i32, p_code: String) {
     
         for dist in dists {
-            let re_zero = Regex::new("(0+)$").unwrap();
+            let re_zero = Regex::new("(00)+$").unwrap();
+            let re_province = Regex::new("省|市|维吾尔自治区|回族自治区|自治区|壮族自治区").unwrap();
+            // let re_city = Regex::new("市|自治州").unwrap();
             let name =  match level {
-                1 => dist.name.replace("省", ""),
-                2 => dist.name.replace("市", ""),
+                1 => format!("{}", re_province.replace(&dist.name, "")),
+                // 2 => format!("{}", re_city.replace(&dist.name, "")),
                 _ => dist.name
             };
             let code = re_zero.replace(&dist.adcode, "");
-            let pcode = match dist.parent_code {
-                Some(c) => c,
-                None => "".to_owned()
-            };
-            let parent_code = re_zero.replace(&pcode, "");
-            self.maps.insert(name, format!("{},{}", code, parent_code));
+            // let pcode = match dist.parent_code {
+            //     Some(c) => c,
+            //     None => "".to_owned()
+            // };
+            let parent_code = re_zero.replace(&p_code, "");
+            // println!("{},{}", name, format!("{},{}", code.clone(), parent_code));
+            self.maps.insert(name, format!("{},{}", code.clone(), parent_code));
             // 递归进行子级处理
             if dist.districts.len() > 0 {
-                self.get_districts_map(dist.districts, level+1);
+                // println!("{}", code);
+                self.get_districts_map(dist.districts, level+1, format!("{}", code.clone()));
             }
         }
     }
