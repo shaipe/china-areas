@@ -13,6 +13,7 @@ serde="*"
 serde_json="*"
 serde_derive="*"
 indicatif="*"
+select = "0.4.3"
 
 [dependencies.lane_net]
 path="../lane/net"
