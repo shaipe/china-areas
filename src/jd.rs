@@ -77,7 +77,9 @@ use crate::amap::HashAmap;
 pub struct JDStandard {
     level: i32,
     codes: HashMap<String, String>,
+    #[allow(dead_code)]
     districts: Vec<StdDistrict>,
+    #[allow(dead_code)]
     districts_str: Vec<String>
 }
 
@@ -213,7 +215,7 @@ impl JDStandard {
         strs
     }
 
-    
+    #[allow(dead_code)]
     fn get_std_districts_str(&self, fmat: FileFormat, dists: Vec<District>) -> Vec<String> {
         let mut dists_str: Vec<String> = vec![];
         for dist in dists {
