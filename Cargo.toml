@@ -14,6 +14,8 @@ serde_json="*"
 serde_derive="*"
 indicatif="*"
 select = "0.4.3"
+scraper = "0.10.1"
+reqwest = "0.9.20"
 
 [dependencies.lane_net]
 path="../lane/net"
