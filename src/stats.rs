@@ -12,6 +12,7 @@ pub fn start(f: FileFormat, sub_level: i32) {
 
 pub fn get_province() {
     println!("{:?}", "sdad");
+    // http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2022/index.html
     let html = get_str("http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/2018/index.html");
 
     println!("{:?}", html);
