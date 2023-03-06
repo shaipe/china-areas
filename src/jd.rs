@@ -1,13 +1,11 @@
+use crate::util::{read_content, write_file};
+use crate::{get_str, ApiSource, FileFormat};
+use indicatif::{ProgressBar, ProgressStyle};
 /**
  * 京东的地址数据库
  * https://d.jd.com/area/get?fid=0
  */
-
 use serde_derive::{Deserialize, Serialize};
-use lane_net::get_str;
-use crate::{FileFormat, ApiSource};
-use crate::util::{write_file, read_content};
-use indicatif::{ProgressBar, ProgressStyle};
 use std::convert::TryFrom;
 
 /// 京东地址数据接口地址
@@ -21,58 +19,63 @@ struct District {
     parent_id: Option<i32>,
     level: Option<i32>,
     reorder: Option<i32>,
-    districts: Option<Vec<District>>
+    districts: Option<Vec<District>>,
 }
 
 /// 地区信息结构扩展
 impl District {
-    
     /// 将区域数据转换为字符串
     fn to_str(&self, fmat: &FileFormat) -> String {
         let dist = self;
-        
+
         let parent_id = match dist.parent_id {
             Some(id) => id,
-            None => 1
+            None => 1,
         };
 
         let level = match dist.level {
             Some(l) => l,
-            None => 1
+            None => 1,
         };
 
         let reorder = match dist.reorder {
             Some(l) => l,
-            None => 0
+            None => 0,
         };
 
         match fmat {
-            FileFormat::Sql => format!("({},'{}',{},{},{})", dist.id, dist.name, parent_id, level, reorder),
-            FileFormat::Csv => format!("{},{},{},{},{}", dist.id, dist.name, parent_id, level, reorder),
-            FileFormat::Json => serde_json::to_string_pretty(&dist).unwrap()
+            FileFormat::Sql => format!(
+                "({},'{}',{},{},{})",
+                dist.id, dist.name, parent_id, level, reorder
+            ),
+            FileFormat::Csv => format!(
+                "{},{},{},{},{}",
+                dist.id, dist.name, parent_id, level, reorder
+            ),
+            FileFormat::Json => serde_json::to_string_pretty(&dist).unwrap(),
         }
     }
 }
 
 // static mut distrcts_str: Option<Vec<String>> = None;
 /// 京东数据获取入口
-pub fn start(f: FileFormat, sub_level: i32){
+pub fn start(f: FileFormat, sub_level: i32) {
     println!("{:?} {}, 开始京东数据分析...", f, sub_level);
-    
+
     // 根据格式进行处理
     let res = match f {
         FileFormat::Sql | FileFormat::Csv => get_districts_no_json(f.clone(), sub_level),
-        FileFormat::Json => get_districts_json(sub_level)
+        FileFormat::Json => get_districts_json(sub_level),
     };
-    
+
     // 把结果写入文件
     write_file("jd", res, sub_level, f);
 
     println!("京东行政区划接口分析结束");
 }
+use crate::amap::HashAmap;
 use crate::standard::StdDistrict;
 use std::collections::HashMap;
-use crate::amap::HashAmap;
 
 pub struct JDStandard {
     level: i32,
@@ -80,35 +83,32 @@ pub struct JDStandard {
     #[allow(dead_code)]
     districts: Vec<StdDistrict>,
     #[allow(dead_code)]
-    districts_str: Vec<String>
+    districts_str: Vec<String>,
 }
 
 impl JDStandard {
-
     pub fn new(source: ApiSource, level: i32) -> Self {
         let codes = match source {
             ApiSource::Amap => {
                 // 从高德中获取名称和行政编码
                 let mut ap = HashAmap::new();
                 ap.get_maps(level)
-            },
-            _ => {
-            HashMap::new()
             }
+            _ => HashMap::new(),
         };
         println!("{:?}", codes);
-        JDStandard{
+        JDStandard {
             level: level,
             codes: codes,
             districts: vec![],
-            districts_str: vec![]
+            districts_str: vec![],
         }
     }
 
     /// 将京东的行政区数据转换为标准行政区划
-    pub fn to_standaard(&self, fmat: FileFormat){
+    pub fn to_standaard(&self, fmat: FileFormat) {
         let dists = load_json(self.level);
-    
+
         let res = self.get_districts(dists, fmat.clone());
 
         write_file("std", res, self.level, fmat);
@@ -117,7 +117,7 @@ impl JDStandard {
     fn get_code(&self, name: String) -> (String, String) {
         let tc: &str = match self.codes.get(&name) {
             Some(c) => c,
-            None => ","
+            None => ",",
         };
         // println!("{}", name);
         let tcs: Vec<&str> = tc.split(",").collect();
@@ -125,13 +125,14 @@ impl JDStandard {
         (tcs[0].to_owned(), tcs[1].to_owned())
     }
 
-    fn get_districts(&self, dists: Vec<District>, fmat: FileFormat) -> Vec<String>{
+    fn get_districts(&self, dists: Vec<District>, fmat: FileFormat) -> Vec<String> {
         let level = self.level;
         let mut ds: Vec<StdDistrict> = vec![];
-        let mut strs:Vec<String> = vec![];
+        let mut strs: Vec<String> = vec![];
 
         let sty = ProgressStyle::default_bar()
             .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+            .unwrap()
             .progress_chars("##-");
         // 获取数组的长度转换为u64
         let b: u64 = u64::try_from(dists.len()).unwrap();
@@ -168,9 +169,7 @@ impl JDStandard {
                     let mut sas: Vec<StdDistrict> = vec![];
                     // 区县级
                     if level > 2 {
-                        
                         for a in c.districts.unwrap() {
-
                             let mut sa = StdDistrict::new();
                             sa.name = a.name;
                             sa.level = a.level.unwrap();
@@ -181,7 +180,7 @@ impl JDStandard {
                             sa.parent_code = cas.1;
                             strs.push(sa.to_str(&fmat.clone()));
 
-                            let mut sts:Vec<StdDistrict> = vec![];
+                            let mut sts: Vec<StdDistrict> = vec![];
                             // 乡镇级
                             if level > 3 {
                                 for t in a.districts.unwrap() {
@@ -202,7 +201,6 @@ impl JDStandard {
                             sa.districts = Some(sts);
                             sas.push(sa);
                         }
-                        
                     }
                     sc.districts = Some(sas);
                     scs.push(sc);
@@ -225,21 +223,14 @@ impl JDStandard {
     }
 }
 
-
-
-
-
-
-
-fn load_json(level:i32) -> Vec<District> {
+fn load_json(level: i32) -> Vec<District> {
     let json_str = read_content("jd", level);
     let data: Vec<District> = serde_json::from_str(&json_str).unwrap();
     data
 }
 
 /// 获取出非json格式的数据
-fn get_districts_no_json (f: FileFormat, sub_level: i32) -> Vec<String> {
-
+fn get_districts_no_json(f: FileFormat, sub_level: i32) -> Vec<String> {
     let mut res: Vec<String> = vec![];
 
     let provinces = get_province("china");
@@ -248,15 +239,18 @@ fn get_districts_no_json (f: FileFormat, sub_level: i32) -> Vec<String> {
 
     // 给定表结构
     match f {
-        FileFormat::Sql => res.insert(0, "replace into cor_Region (CodeId, Name, ParentId, Level, Reorder) VALUES ".to_owned()),
+        FileFormat::Sql => res.insert(
+            0,
+            "replace into cor_Region (CodeId, Name, ParentId, Level, Reorder) VALUES ".to_owned(),
+        ),
         _ => {}
     };
 
     if sub_level > 1 {
-        
         // let m = MultiProgress::new();
         let sty = ProgressStyle::default_bar()
             .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+            .unwrap()
             .progress_chars("##-");
         // 获取数组的长度转换为u64
         let b: u64 = u64::try_from(provinces.len()).unwrap();
@@ -281,7 +275,6 @@ fn get_districts_no_json (f: FileFormat, sub_level: i32) -> Vec<String> {
 
                     // 获取镇级数据
                     if sub_level > 3 {
-                        
                         for a in ars {
                             let towers = get_districts(a.id);
                             let mut towers_str = get_districts_str(a.id, towers.clone(), 4, &f);
@@ -303,9 +296,9 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
     let provinces = get_province("china");
     let mut res: Vec<String> = vec![];
 
-
     let sty = ProgressStyle::default_bar()
         .template("[{elapsed_precise}] {bar:40.cyan/blue} {pos:>7}/{len:7} {msg}")
+        .unwrap()
         .progress_chars("##-");
     // 获取数组的长度转换为u64
     let b: u64 = u64::try_from(provinces.len()).unwrap();
@@ -320,13 +313,13 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
             let cs = get_districts(p.id);
             let mut c_order = 1;
             // 此处用来记录已修改的子级对象
-            let mut mcs:Vec<District> = vec![];
+            let mut mcs: Vec<District> = vec![];
             for mut c in cs {
                 // 获取区县
                 if sub_level > 2 {
                     let a_s = get_districts(c.id);
                     let mut mas: Vec<District> = vec![];
-                    let mut a_order = 1;    
+                    let mut a_order = 1;
                     for mut a in a_s {
                         // 获取乡镇
                         if sub_level > 3 {
@@ -359,7 +352,7 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
                 c_order += 1;
             }
             // println!("{:?}", cs.clone());
-            
+
             p.districts = Some(mcs);
         }
 
@@ -370,17 +363,20 @@ fn get_districts_json(sub_level: i32) -> Vec<String> {
         let json_res = serde_json::to_string_pretty(&p);
         let json_str = match json_res {
             Ok(s) => s,
-            Err(_) => String::from("xx")
+            Err(_) => String::from("xx"),
         };
         res.push(json_str);
     }
     res
 }
 
-
-
 /// 获取区域数据为对象和
-fn get_districts_str(id: i32, districts: Vec<District>, level: i32, fmat: &FileFormat) -> Vec<String> { 
+fn get_districts_str(
+    id: i32,
+    districts: Vec<District>,
+    level: i32,
+    fmat: &FileFormat,
+) -> Vec<String> {
     let mut dists_str: Vec<String> = vec![];
     let mut reorder: i32 = 1;
     for mut dist in districts.clone() {
@@ -393,32 +389,30 @@ fn get_districts_str(id: i32, districts: Vec<District>, level: i32, fmat: &FileF
     dists_str
 }
 
-fn get_districts(id: i32) -> Vec<District>{
+fn get_districts(id: i32) -> Vec<District> {
     let url = format!("{}{}", URL, id);
     let html = get_str(&url);
     // if html == "" {
     //     vec![]
     // }
     // else{
-        let districts: Vec<District> = match serde_json::from_str(&html) {
-            Ok(j) => j,
-            Err(_) => vec![]
-        };
-        districts
+    let districts: Vec<District> = match serde_json::from_str(&html) {
+        Ok(j) => j,
+        Err(_) => vec![],
+    };
+    districts
     // }
-    
 }
 
 /// 获取中华人民共和国省份
 /// https://d.jd.com/area/get?fid=4744 包含中国所有的省以及港澳台地区
-fn get_province(scope: &str) -> Vec<District>{
+fn get_province(scope: &str) -> Vec<District> {
     let url = format!("{}{}", URL, "0");
     let html = get_str(&url);
     let districts: Vec<District> = serde_json::from_str(&html).unwrap();
     if scope == "all" {
         districts
-    }
-    else{
+    } else {
         let mut dists: Vec<District> = vec![];
         for mut district in districts {
             // 只取中国大陆和港奥,台湾

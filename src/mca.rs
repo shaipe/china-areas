@@ -1,8 +1,9 @@
 /**
  * 中华人民共和国民政部数据
  * http://www.mca.gov.cn/article/sj/xzqh/2019
+ * https://www.mca.gov.cn/article/sj/xzqh/1980/202203/20220300040708.shtml
  */
-use crate::FileFormat;
+use crate::{FileFormat, get_str};
 use scraper::{Html, Selector};
 
 pub fn start(f: FileFormat, sub_level: i32) {
@@ -14,7 +15,7 @@ pub fn start(f: FileFormat, sub_level: i32) {
 /// 获取和解析html
 pub fn parse_html(url: &str) {
 
-    let html = lane_net::get_str(url);
+    let html = get_str(url);
     let doc = Html::parse_document(&html);
     let selector = Selector::parse("tr").unwrap();
     let td_selector = Selector::parse("td").unwrap();

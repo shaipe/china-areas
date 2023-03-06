@@ -3,7 +3,7 @@
  * http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/
  */
 use crate::FileFormat;
-use lane_net::get_str;
+use crate::get_str;
 
 pub fn start(f: FileFormat, sub_level: i32) {
     println!("{:?} {}, 正在抓紧开发中...", f, sub_level);

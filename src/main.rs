@@ -5,7 +5,7 @@
  */
 
 // extern crate reqwest;
-extern crate lane_net;
+// extern crate lane_net;
 
 /// 项目内部模块引入
 mod util;
@@ -14,10 +14,23 @@ mod jd;
 mod mca;
 mod stats;
 mod standard;
+mod client;
+mod error;
 
+use client::Client;
+use error::Error;
 
 // 
 use std::env;
+
+pub type Result<T> = ::std::result::Result<T, Error>;
+
+pub fn get_str(url: &str) -> String {
+	match Client::new().get(url) {
+		Ok(v) => v,
+		Err(_) => "".to_owned()
+	}
+}
 
 /// 支持的格式
 #[derive(Clone, Debug)]

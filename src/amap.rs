@@ -3,7 +3,6 @@
  * http://lbs.amap.com/api/webservice/guide/api/district
  */
 use serde_derive::{Deserialize, Serialize};
-use lane_net::get_str;
 use regex::Regex;
 use std::collections::HashMap;
 use crate::util::write_file;
@@ -57,7 +56,7 @@ impl Amap {
     }
 }
 
-use crate::FileFormat;
+use crate::{FileFormat, get_str};
 
 /// 抓取开始
 pub fn start(f: FileFormat, sub_level: i32){
